@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hyt.progress</groupId>
+    <groupId>io.github.opencr</groupId>
     <artifactId>hyt-progress</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>easyexcel-parent</name>
@@ -130,11 +130,11 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh2</id>
+            <id>central</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh2</id>
+            <id>central</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
@@ -163,7 +163,9 @@
                     <version>0.6.0</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <publishingServerId>ossrh2</publishingServerId>
+                        <publishingServerId>central</publishingServerId>
+                        <deploymentName>${project.groupId}:${project.artifactId}:${project.version}</deploymentName>
+                        <autoPublish>true</autoPublish>
                     </configuration>
                 </plugin>
                 <plugin>
